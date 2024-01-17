@@ -56,25 +56,42 @@
         </div>
         
         <div class="form-container sign-in-container">
-    <form th:action="@{/verifyAdminLogin}" th:object="${received}" method="get">
+    <!--<form th:action="@{/verifyAdminLogin}" th:object="${received}" method="get">
         <h1>Sign in</h1>
         
-        <!-- Username input -->
+         Username input 
         <div class="form-group">
-           <!-- <label for="email">Email:</label>-->
+            <label for="email">Email:</label>
             <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required />
         </div>
         
-        <!-- Password input -->
+         Password input 
         <div class="form-group">
-           <!-- <label for="password">Password:</label>-->
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required />
         </div>
         <br/>
         <button type="submit" class="btn btn-primary">Sign In</button>
         <br/>
         <a href="forgetPasswordadmin">Forgot your password?</a>
-    </form>
+    </form>-->
+    
+  <form 
+         th:action="@{/adminLogin}"method="post">
+         
+            <div class="form-group">
+                <label for="username">Email</label>
+                <input  type="text" id="username" name="username" placeholder="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input  type="password" id="password" name="password" placeholder="password" required>
+            </div>
+            <!--<input type="submit" value="Login">-->
+            <button type="submit">Sign In</button>
+             <a href="forgetPassword">Forgot your password?</a> 
+        </form>
 </div>
 
         

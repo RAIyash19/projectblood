@@ -23,6 +23,7 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler {
 		
 		var authourities = authentication.getAuthorities();
 		var roles = authourities.stream().map(r -> r.getAuthority()).findFirst();
+		System.out.println(roles);
 		
 		if (roles.orElse("").equals("ADMIN")) {
 			response.sendRedirect("/adminHome");
