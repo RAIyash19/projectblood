@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Request Form</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/donaterequest.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 col-md-push-5">
+						<div class="booking-cta">
+							<h1>In Every Request, Echoes of Life: Be the Catalyst, Request Blood, and Write Stories of Survival.</h1>
+							
+						</div>
+					</div>
+
+                            <div class="col-md-4 col-md-pull-7">
+                                <div class="booking-form">
+                                    <form id="donationForm">
+                                        <div class="form-group">
+                                            <span class="form-label">Select Type</span>
+                                            <select class="form-control" id="donationType" name="donationType">
+                                                <option value="self">For Self</option>
+                                                <option value="others">For Others</option>
+                                            </select>
+                                        </div>
+                                    
+                                        <!-- For Self -->
+                                        <div id="forSelf">
+                                            <!-- <div class="form-group">
+                                                <span class="form-label">Select Product</span>
+                                                <select class="form-control" name="product">
+                                                    <option value="blood">Blood</option>
+                                                    <option value="plasma">Plasma</option>
+                                                    <option value="platelets">Platelets</option>
+                                                </select>
+                                            </div> -->
+                                            <div class="form-group">
+                                                <span class="form-label">How many units do you need? (1 unit = 450ml)</span>
+                                                <input class="form-control" type="number" name="units" required>
+                                            </div>
+                                    
+                                            <div class="form-group">
+                                                <span class="form-label">Reason for Request</span>
+                                                <textarea id="reason" name="reason" rows="4" required></textarea>
+                                            </div>
+                                        </div>
+                                    
+                                        <!-- For Others -->
+                                        <!-- <div id="forOthers" style="display:none;">
+                                            <div class="form-group">
+                                                <span class="form-label">Name of the Patient</span>
+                                                <input class="form-control" type="text" name="patientName" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class="form-label">Phone Number</span>
+                                                <input class="form-control" type="tel" name="phoneNumber" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="bloodType">Blood Type:</label>
+                                                <select class="form-control" id="bloodType" name="bloodType" required>
+                                                    <option value="A+">A+</option>
+                                                    <option value="B+">B+</option>
+                                                    <option value="O+">O+</option>
+                                                    <option value="AB+">AB+</option>
+                                                    <option value="A-">A-</option>
+                                                    <option value="B-">B-</option>
+                                                    <option value="O-">O-</option>
+                                                    <option value="AB-">AB-</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                            
+                                                <span class="form-label">How many units do you need?</span>
+                                                <input class="form-control" type="number" name="units" required>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    
+                                        <div class="form-btn">
+                                            <button class="submit-btn">Submit</button>
+                                        </div> -->
+
+
+                                        <!-- Second Opinion -->
+                                        <div id="forOthers" style="display:none;">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <span class="form-label">First Name</span>
+                                                        <input class="form-control" type="text" name="firstName" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <span class="form-label">Last Name</span>
+                                                        <input class="form-control" type="text" name="lastName" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <span class="form-label">Gender</span>
+                                                        <select class="form-control" name="gender" required>
+                                                            <option value="male">Male</option>
+                                                            <option value="female">Female</option>
+                                                            <option value="other">Other</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <span class="form-label">Date of Birth</span>
+                                                        <input class="form-control" type="date" name="dob" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="bloodType">Blood Type:</label>
+                                                        <select class="form-control" id="bloodType" name="bloodType" required>
+                                                            <option value="A+">A+</option>
+                                                            <option value="B+">B+</option>
+                                                            <option value="O+">O+</option>
+                                                            <option value="AB+">AB+</option>
+                                                            <option value="A-">A-</option>
+                                                            <option value="B-">B-</option>
+                                                            <option value="O-">O-</option>
+                                                            <option value="AB-">AB-</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <span class="form-label">Units</span>
+                                                        <input class="form-control" type="number" name="units" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <span class="form-label">City</span>
+                                                        <input class="form-control" type="text" name="city" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <span class="form-label">Reason for Blood Request</span>
+                                                        <textarea class="form-control" name="reason" rows="4" required></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-btn">
+                                            <button class="submit-btn">Submit</button>
+                                        </div>
+                                        
+                                        
+                                    </form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script>
+        // jQuery function to switch between self and others
+        $(document).ready(function(){
+            $("#donationType").change(function(){
+                if($(this).val() == "self"){
+                    $("#forSelf").show();
+                    $("#forOthers").hide();
+                }
+                else{
+                    $("#forSelf").hide();
+                    $("#forOthers").show();
+                }
+            });
+        });
+    </script>
+	<script>
+		function showSuccessMessage() {
+		  // Assuming your form has an id of "profileForm"
+		  document.getElementById('profileForm').addEventListener('submit', function() {
+			alert('Request Sent Successfully!');
+		  });
+		}
+	  </script>
+</body>
+
+</html>

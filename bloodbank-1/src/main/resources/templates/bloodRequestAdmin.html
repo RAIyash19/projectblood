@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description" content="Ample Admin Lite is powerful and clean admin dashboard template, inspired by Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Ample Admin Lite Template by WrapPixel</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="/static/css/style.min.css" rel="stylesheet">
+
+    <!-- Add Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .navbar-skyblue {
+            background-color: skyblue;
+        }
+
+        .company-name {
+            font-size: 26px;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-skyblue">
+                <div class="navbar-header" data-logobg="skin6">
+                    <a class="navbar-brand" href="dashboard.html">
+                        <span class="company-name">Blood Buddies</span>
+                    </a>
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <ul class="navbar-nav d-none d-md-block d-lg-none">
+                        <li class="nav-item">
+                            <a class="nav-toggler nav-link waves-effect waves-light text-white" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto d-flex align-items-center"></ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <div class="scroll-sidebar">
+                <nav class="sidebar-nav">
+                     <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/adminHome"
+                                aria-expanded="false">
+                                <i class="far fa-clock" aria-hidden="true"></i>
+                                <span class="hide-menu">Dashboard</span>
+                                <!-- <li class="nav-item px-2"><a class="nav-link" href="#bloodproducts">Blood Products</a></li>
+                                -->
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="viewProfileDetail"
+                                aria-expanded="false">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span class="hide-menu">Profile</span>
+                                <!-- <li class="nav-item px-2"><a class="nav-link" href="adminProfile">Profile</a></li>-->
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="viewDonationRequests"
+                                aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">Blood Donation Request</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="viewDonationHistory"
+                                aria-expanded="false">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                                <span class="hide-menu">Blood Donation Views</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="viewBloodRequest"
+                                aria-expanded="false">
+                                <i class="fa fa-globe" aria-hidden="true"></i>
+                                <span class="hide-menu">Blood Request</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="viewBloodRequestHistory"
+                                aria-expanded="false">
+                                <i class="fa fa-columns" aria-hidden="true"></i>
+                                <span class="hide-menu">Blood Request Views</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="getInventory"
+                                aria-expanded="false">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <span class="hide-menu">Blood Inventory</span>
+                            </a>
+                        </li>
+                         <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="getInventoryDetails" aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">Blood Expiry Details</span>
+                            </a>
+                        </li>
+                         <li class="text-center p-20 signout-btn">
+                            <a href="adminLogin"
+                                class="btn d-grid btn-danger text-white" target="_blank">
+                                Sign out</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="page-wrapper">
+            <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Blood Requests</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <div class="table-responsive">
+                                <table class="table text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">S.No</th>
+                                            <th class="border-top-0">First Name</th>
+                                            <th class="border-top-0">Last Name</th>
+                                            <th class="border-top-0">Email</th>
+                                            <th class="border-top-0">Blood Group</th>
+                                            <th class="border-top-0">No.of Units</th>
+                                            <th class="border-top-0">Date of Request</th>
+                                            <th class="border-top-0">Reason</th>
+                                            <th class="border-top-0">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="donationRequestsTableBody">
+                                        <!-- Rows will be dynamically added here -->
+                
+                                    <!-- Use Thymeleaf to iterate over the list of donorData from the controller -->
+                                    <tr th:each="recieve, rowStat : ${recieve}">
+                                        <td th:text="${rowStat.index + 1}"></td>
+                                        <td th:text="${recieve.firstname}"></td>
+                                        <td th:text="${recieve.lastname}"></td>
+                                        <td th:text="${recieve.email}"></td>
+                                        <td th:text="${recieve.bloodGroup}"></td>
+                                        <td th:text="${recieve.bloodUnits}"></td>
+                                        <td th:text="${recieve.dateOfBlood }"></td>
+                                        <td th:text="${recieve.reason}"></td>
+                                        <!-- ... (existing HTML code) ... -->
+<td class="action-cell">
+                <!--<button class="btn btn-success btn-accept"  th:data-onclick="'accept(\'' + ${donor.email} + '\')'">Accept</button>-->
+                <button class="btn btn-success btn-accept" th:attr="onclick='accept(\'' + ${recieve.email} + '\')'">Accept</button>
+
+
+                <button class="btn btn-danger btn-reject"th:attr="onclick='reject(\'' + ${recieve.email} + '\')'">Reject</button>
+               </td>
+               
+              
+
+
+<!-- ... (existing HTML code) ... -->
+
+                                    </tr>
+                                    <!-- ... (your existing table body) ... -->
+                                
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- All Jquery -->
+        <script src="/static/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="/static/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/js/app-style-switcher.js"></script>
+        <!-- Wave Effects -->
+        <script src="/static/js/waves.js"></script>
+        <!-- Menu sidebar -->
+        <script src="/static/js/sidebarmenu.js"></script>
+        <!-- Custom JavaScript -->
+        <script src="/static/js/custom.js"></script>
+
+        <!-- Include Bootstrap JS -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+        
+        <script>
+	
+  
+    function accept(email) {
+		
+    console.log('Accept function called with email:', email);
+    // ... (rest of your code)
+
+    // Assuming you have an endpoint '/acceptDonationRequest/{email}' on the server to handle donation requests
+    fetch('/admin/acceptBloodRequest/' + email, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json' // Add appropriate headers if needed
+        },
+        // You can include a request body if needed
+        // body: JSON.stringify({ /* data to send in the request body */ })
+    })
+    .then(response => {
+        // Handle the response as needed
+        if (response.ok) {
+            console.log('Donation request accepted successfully');
+        } else {
+            console.error('Failed to accept donation request:', response.statusText);
+        }
+    })
+    .catch(error => console.error('Error accepting donation request:', error));
+}
+
+    
+</script>
+
+
+        <script>
+	
+  
+    function reject(email) {
+		
+    console.log('Accept function called with email:', email);
+    // ... (rest of your code)
+
+    // Assuming you have an endpoint '/acceptDonationRequest/{email}' on the server to handle donation requests
+    fetch('/admin/rejectBloodRequest/' + email, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json' // Add appropriate headers if needed
+        },
+        // You can include a request body if needed
+        // body: JSON.stringify({ /* data to send in the request body */ })
+    })
+    .then(response => {
+        // Handle the response as needed
+        if (response.ok) {
+            console.log('Donation request accepted successfully');
+        } else {
+            console.error('Failed to accept donation request:', response.statusText);
+        }
+    })
+    .catch(error => console.error('Error accepting donation request:', error));
+}
+
+    
+</script>
+
+
+
+
+
+
+
+        <script>
+        // Function to add a new row to the table
+        function addTableRow(firstName, lastName, email, bloodGroup, units,date,reason) {
+            var newRow = '<tr>' +
+                '<td>' + ($('#donationRequestsTableBody tr').length + 1) + '</td>' +
+                '<td>' + firstName + '</td>' +
+                '<td>' + lastName + '</td>' +
+                '<td>' + email + '</td>' +
+                '<td>' + bloodGroup + '</td>' +
+                '<td>' + units + '</td>' +
+                '<td>' + date + '</td>' +
+                '<td>' + reason + '</td>' +
+                '<td class="action-cell">' +
+                '<button class="btn btn-success btn-accept">Accept</button>' +
+                '<button class="btn btn-danger btn-reject">Reject</button>' +
+                '<span class="status-label" style="display:none;"></span>' +
+                '</td>' +
+                '</tr>';
+
+            // Append the new row to the table body
+            var $newRow = $(newRow);
+            $('#donationRequestsTableBody').append($newRow);
+
+            // Click event handler for the "Accept" button in the new row
+            $newRow.find('.btn-accept').on('click', function () {
+                // Hide the buttons
+                $newRow.find('.btn-accept, .btn-reject').hide();
+                // Show the status label
+                $newRow.find('.status-label').text('Accepted').addClass('text-success').show();
+            });
+
+            // Click event handler for the "Reject" button in the new row
+            $newRow.find('.btn-reject').on('click', function () {
+                // Hide the buttons
+                $newRow.find('.btn-accept, .btn-reject').hide();
+                // Show the status label
+                $newRow.find('.status-label').text('Rejected').addClass('text-danger').show();
+            });
+        }
+
+        // Add a sample row when the page loads
+        $(document).ready(function () {
+            addTableRow('John', 'Doe', 'john.doe@example.com', 'A+', '2','11-1-2023','Urgent Requirement of Blood');
+        });
+    </script>
+    </body>
+
+    </html>

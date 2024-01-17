@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Admin Dashboard</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.7.0.js">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        #sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #87CEEB; /* Light blue color */
+            padding-top: 20px;
+            color: #fff;
+        }
+
+        #content {
+            margin-left: 250px;
+            padding: 20px;
+            background-color: #fff; /* White color */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Style the sidebar links */
+        #sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        /* Change color on hover */
+        #sidebar a:hover {
+            background-color: #5F9EA0; /* Darker blue on hover */
+        }
+      
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <a href="/viewBloodRequestDetails" onclick="showContent('donation-content')">Request History</a>
+        <a href="userHome">Go Back</a>
+    </div>
+
+    <!-- Page content -->
+    <div id="content">
+        <div id="donation-content" class="content-section">
+            <div>
+             <h1>Donation History</h1>
+            </div>
+            <br>
+            <br>
+            <div>
+            <table id="example" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Serial No</th>
+                            <th>First Name</th>
+                             <th>Last Name</th>
+                              
+                            <th>Email</th>
+                              <th>Date of Birth</th>
+                                <th>Gender</th>
+                            <th>Blood Group</th>
+                             
+                            <th>No of Units</th>
+                            <th>Date of Blood</th>
+                           <th>City</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Iterate over donation records -->
+                        <tr th:each="request, rowStat : ${bloodRequestHistory}">
+                            <td th:text="${rowStat.index + 1}"></td>
+                            <td th:text="${request.firstname}"></td>
+                             <td th:text="${request.lastname}"></td>
+                              
+                            <td th:text="${request.email}"></td>
+                            <td th:text="${request.dateOfBirth}"></td>
+                            <td th:text="${request.gender}"></td>
+                             <td th:text="${request.bloodGroup}"></td>
+                             <td th:text="${request.bloodUnits}"></td>
+                            <td th:text="${request.dateOfBlood}"></td>
+                           <td th:text="${request.city}"></td>
+                            
+                            <td th:text="${request.reason}"></td>
+                            <td>
+                                <!-- Conditionally set status text based on the status value -->
+                                <span th:if="${request.status == 1}" class="text-success">Accepted</span>
+                                <span th:if="${request.status == 0}" class="text-warning">Pending</span>
+                                <span th:if="${request.status == -1}" class="text-danger">Rejected</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Serial No</th>
+                              <th>First Name</th>
+                             <th>Last Name</th>
+                             
+                            <th>Email</th>
+                            <th>Date of Birth</th>
+                            
+                                <th>Gender</th>
+                            <th>Blood Group</th>
+                             
+                            <th>No of Units</th>
+                            <th>Date of Blood</th>
+                                                       <th>City</th>
+                            
+                            <th>Reason</th>
+                            <th>Status</th>
+                        </tr>
+                    </tfoot>
+                </table>
+        </div>
+               
+            </body>
+        </div>
+    </div>
+    </div>
+
+       
+    
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Jasny Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/js/jasny-bootstrap.min.js"></script>
+
+
+    <!-- Custom JavaScript -->
+    <!-- <script>
+        function showContent(contentId) {
+            // Hide all content sections
+            var contentSections = document.querySelectorAll('.content-section');
+            contentSections.forEach(function (section) {
+                section.classList.add('hidden');
+            });
+
+            // Show the selected content section
+            var selectedContent = document.getElementById(contentId);
+            selectedContent.classList.remove('hidden');
+        }
+    </script> -->
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+    <script>
+        // $(document).ready( function () {
+        //  $('#example').DataTable();
+        // } )
+        $(document).ready(function () {
+            var table = $('#example').DataTable({
+                "columnDefs": [
+                    {
+                        "targets": 0,
+                        "data": null,
+                        "defaultContent": "",
+                        "render": function (data, type, row, meta) {
+                            // Use meta.row + 1 to get the row number (1-indexed)
+                            return meta.row + 1;
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+   
+    
+</body>
+</html>

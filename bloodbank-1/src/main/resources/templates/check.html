@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Service</title>
+  <!-- Bootstrap CSS CDN link -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Adjust sidebar height and background color */
+    .sidebar {
+      height: 100vh;
+      background-color: #f8f9fa; /* Light gray background */
+      padding: 20px;
+    }
+
+    /* Style for the sidebar boxes */
+    .sidebar-box {
+      background-color: #ADD8E6; /* Light blue color */
+      color: #000; /* Black text */
+      padding: 15px;
+      margin-bottom: 100px; /* Spacing between boxes */
+      cursor: pointer;
+      border-radius: 5px; /* Rounded corners */
+      text-align: center; /* Center text */
+      transition: background-color 0.3s ease-in-out; /* Smooth color transition */
+    }
+
+    /* Style for the sidebar icons */
+    .sidebar-icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px; /* Spacing between icon and text */
+    }
+
+    /* Style for the sidebar links */
+    .sidebar-link {
+      color: #000; /* Black color for links */
+      text-decoration: none; /* Remove underline from links */
+      display: block; /* Make the links take full width */
+    }
+
+    /* Style for the sidebar container */
+    .sidebar-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    /* Style for the stats bars */
+    .stats-bar {
+      background-color: #ADD8E6; /* Light blue color */
+      color: #000; /* Black text */
+      padding: 15px;
+      margin-bottom: 5px; /* Spacing between bars */
+      cursor: pointer;
+      border-radius: 5px; /* Rounded corners */
+      text-align: center; /* Center text */
+    }
+
+    /* Style for the stats bars container */
+    .stats-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px; /* Adjust top margin */
+    }
+
+    /* Individual stats bars */
+    .individual-stat {
+      width: calc(50% - 10px); /* Width for each bar */
+    }
+
+    /* Main content image */
+    .main-image {
+      width: 100%; /* Full width */
+      height: auto; /* Maintain aspect ratio */
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3  p-0 sidebar">
+        <div class="sidebar-container">
+          <!-- Box 1 - Profile -->
+          <a href="profile.html" class="sidebar-link">
+            <div class="sidebar-box">
+              <img src="https://cdn-icons-png.flaticon.com/512/3686/3686930.png" alt="Profile" class="sidebar-icon">
+              <span>Profile</span>
+            </div>
+          </a>
+          <!-- Box 2 - Donations -->
+          <a href="donations.html" class="sidebar-link">
+            <div class="sidebar-box">
+              <img src="https://th.bing.com/th/id/OIP.hvx1irXA_OQGMlW_Kb119QAAAA?rs=1&pid=ImgDetMain" alt="Donations" class="sidebar-icon">
+              <span>Donations</span>
+            </div>
+          </a>
+          <!-- Box 3 - Receiving -->
+          <a href="receiving.html" class="sidebar-link">
+            <div class="sidebar-box">
+              <img src="https://th.bing.com/th/id/OIP.K3RN_KNhox_pa4QHGJT3RgHaHa?rs=1&pid=ImgDetMain" alt="Receiving" class="sidebar-icon">
+              <span>Receiving</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-9">
+        <div class="container text-center mt-5">
+    <!-- Stats Bars -->
+    <div class="stats-bar">
+        <span th:text="${username}">Username</span>
+    </div>
+    <div class="stats-container">
+        <div class="stats-bar individual-stat">
+            <span th:text="'No. of Donations: ' + ${donations}">No. of Donations</span>
+        </div>
+        <div class="stats-bar individual-stat">
+            <span th:text="'No. of Requests: ' + ${requests}">No. of Requests</span>
+        </div>
+    </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Function to fetch and update stats
+    function updateStats() {
+        // Fetch data from the backend API endpoint
+        fetch('/api/stats')
+            .then(response => response.json())
+            .then(data => {
+                // Update stats on the page
+                document.getElementById('username').textContent = data.username;
+                document.getElementById('donationsStat').textContent = `No. of Donations: ${data.donations}`;
+                document.getElementById('requestsStat').textContent = `No. of Requests: ${data.requests}`;
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+
+    // Call the function when the page is loaded or refreshed
+    window.onload = updateStats;
+</script>
+
+  <!-- Bootstrap JS and jQuery CDN links (required for Bootstrap functionality) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

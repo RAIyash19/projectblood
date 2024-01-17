@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration with OTP</title>
+</head>
+<body>
+    <h1>User Registration</h1>
+
+    <form id="registrationForm" action="/register" th:object="${detail}" method="post">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required>
+        <br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required>
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+
+        <!-- Button to send OTP -->
+        <button type="button" onclick="sendOTP()">Send OTP</button>
+        <br>
+
+        <label for="otp">OTP:</label>
+        <input type="text" id="otp" name="otp" required>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <br>
+
+        <!-- Button to submit the registration form -->
+        <button type="submit">Register</button>
+    </form>
+<script>
+    function sendOTP() {
+        var email = document.getElementById('email').value;
+        
+        // Assuming you have an endpoint '/sendOTP/{email}' on the server to handle OTP requests
+        fetch('/sendOTP/' + email, { method: 'POST' })
+            .then(response => {
+                // Handle the response as needed
+                console.log('OTP Sent Successfully');
+            })
+            .catch(error => console.error('Error sending OTP:', error));
+    }
+</script>
+</body>
+</html>

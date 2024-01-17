@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <title>Admin Login</title>
+  </head>
+  <body>
+  
+
+  
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <h3>Admin Sign-In</h3>
+              <p class="mb-4">Unlocking Lifesaving Potential: Admin Access to Blood Bank Harmony!</p>
+            </div>
+            <form action="C:\Users\adityeshwar_mallare\Desktop\BloodTemplate\bloodbank\Admin_Home\adminhome.html" method="post" onsubmit="return validateForm()">
+              <div class="form-group first">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" id="username" name="username">
+                  <span id="usernameError" class="error"></span>
+              </div>
+              <div class="form-group last mb-4">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" name="password">
+                  <span id="passwordError" class="error"></span>
+              </div>
+      
+              <input type="submit" value="Log In" class="btn btn-block btn-primary">
+            </form>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      function validateForm() {
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+          // var usernameError = document.getElementById("usernameError");
+          // var passwordError = document.getElementById("passwordError");
+          var isValid = true;
+
+          // Validate username
+          if (username.trim() === "") {
+              // usernameError.innerHTML = "Username is required";
+              alert('Enter Username')
+              isValid = false;
+          } else {
+              usernameError.innerHTML = "";
+          }
+
+          // Validate password
+          if (password.trim() === "") {
+              // passwordError.innerHTML = "Password is required";
+              alert('Enter Password')
+              isValid = false;
+          } else {
+              passwordError.innerHTML = "";
+          }
+
+          // Check if the provided credentials are allowed
+          if (isValid && username !== "admin@hemoharbor.com" && password !== "admin123") {
+              // usernameError.innerHTML = "Invalid username or password";
+              // passwordError.innerHTML = "Invalid username or password";
+              alert('Invalid Credentials!')
+              isValid = false;
+          }
+
+          return isValid;
+      }
+  </script>
+  </body>
+</html>

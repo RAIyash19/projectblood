@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Donate Form</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/donaterequest.css" />
+
+
+
+</head>
+
+<body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 col-md-push-5">
+						<div class="booking-cta">
+							<h1>Every Beat Counts: Donate Blood, Transform a Life,
+								Ignite the Heart of Humanity!</h1>
+							<!-- <p>Embark on a journey of compassion and impact as you extend a lifeline through the simple act of donating blood. In every pint, there lies the potential to save a life, to be a hero in someone's story. Be the heartbeat of hope, and with each donation, watch as you transform drops of blood into a symphony of life.  -->
+							<!-- </p> -->
+						</div>
+					</div>
+					<div class="col-md-4 col-md-pull-7">
+						<div class="booking-form">
+							<form id="profileForm">
+                                                  
+								<div class="form-group">
+									<span class="form-label">Select Product</span>
+									<select class="form-control" name="product">
+										<option value="blood">Blood</option>
+										<option value="plasma">Plasma</option>
+										<option value="platelets">Platelets</option>
+									</select>
+								</div>
+								
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Date</span>
+											<input class="form-control" type="date" required>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Time</span>
+											<input class="form-control" type="time" required>
+										</div>
+									</div>
+								</div>
+				
+								<div class="form-btn">
+									<button class="submit-btn" type="submit" onclick="showSuccessMessage()">Submit</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function showSuccessMessage() {
+		  // Assuming your form has an id of "profileForm"
+		  document.getElementById('profileForm').addEventListener('submit', function() {
+			alert('Request Sent Successfully!');
+		  });
+		}
+	  </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+ <!----> <head>
+     Required meta tags 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/adminLogin/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="static/adminLogin/css/owl.carousel.min.css">
+
+     Bootstrap CSS 
+    <link rel="stylesheet" href="static/adminLogin/css/bootstrap.min.css">
+    
+     Style 
+    <link rel="stylesheet" href="static/adminLogin/css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <title>Admin Login</title>
+  </head>
+  <body>
+  
+  
+   <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="static/adminLogin/images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+				   <div class="mb-4">
+              <h3>Admin Sign-In</h3>
+              <p class="mb-4">Unlocking Lifesaving Potential: Admin Access to Blood Bank Harmony!</p>
+            </div>
+          
+            
+            
+            
+
+				 
+            <div th:if="${error}">
+    <p style="color: red;" th:text="${error}"></p>
+</div>
+
+ <div th:if="${invalidMail}">
+    <p style="color: red;" th:text="${invalidMail}"></p>
+</div>
+            <!--working-->
+            
+        </div>
+        
+        <div class="form-container sign-in-container">
+    <form th:action="@{/verifyAdminLogin}" th:object="${received}" method="get">
+        <h1>Sign in</h1>
+        
+        <!-- Username input -->
+        <div class="form-group">
+           <!-- <label for="email">Email:</label>-->
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required />
+        </div>
+        
+        <!-- Password input -->
+        <div class="form-group">
+           <!-- <label for="password">Password:</label>-->
+            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required />
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+        <br/>
+        <a href="forgetPasswordadmin">Forgot your password?</a>
+    </form>
+</div>
+
+        
+        
+        
+        
+        
+        <!--
+        <div class="form-container sign-in-container">
+		  <form th:action="@{/verifyAdminLogin}" th:object = "${received}" method="get">
+				<h1>Sign in</h1>
+				 
+				<input type="email" id="email" name="email" placeholder="Email" required />
+				<input type="password" id="password" name="password" placeholder="Password" required />
+				<br/>
+				<button type="submit">Sign In</button>
+				<br/>
+				 <a href="forgetPassword">Forgot your password?</a> 
+				
+			</form>
+        </div>
+-->
+  
+    <script src="static/adminLogin/js/jquery-3.3.1.min.js"></script>
+    <script src="static/adminLogin/js/popper.min.js"></script>
+    <script src="static/adminLogin/js/bootstrap.min.js"></script>
+    <script src=static/adminLogin/"js/main.js"></script>
+    
+  </body>
+</html>
