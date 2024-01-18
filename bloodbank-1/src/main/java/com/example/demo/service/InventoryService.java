@@ -98,7 +98,7 @@ public class InventoryService {
             String donationDate = donorlist.getDateOfDonation();
             long days = findDifference(donationDate, todayDate);
 
-            if (days > 90) {
+            if (days > 40) {
                 int id = donorlist.getBloodId();
                 repo.deleteByBloodId(id);
                 deletedItems.add(donorlist);
